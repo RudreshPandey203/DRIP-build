@@ -10,19 +10,19 @@ function MyNavbar() {
         setActiveTab(tab);
     };
     return (
-        <div fill variant="tabs" className='brand-left mx-auto' defaultActiveKey="/">
+        <div fill variant="tabs" className='brand-nav ' defaultActiveKey="/">
             <img className="brand-image" src={Logo} alt="Logo" />
 
             <Link to="/"
                 className={`navItem ${activeTab === '/' ? 'active' : ''}`}
-                onClick={() => handleTabClick('/')}>NEW</Link>
+                onClick={() => handleTabClick('/')}><p className='nav-opt'>NEW</p></Link>
 
             <Link
                 to="/shop"
                 className={`navItem ${activeTab === '/shop' ? 'active' : ''}`}
                 onClick={() => handleTabClick('/shop')}
             >
-                SHOP
+                <p className='nav-opt'>SHOP</p>
             </Link>
 
             <Link
@@ -30,7 +30,7 @@ function MyNavbar() {
                 className={`navItem ${activeTab === '/promo' ? 'active' : ''}`}
                 onClick={() => handleTabClick('/promo')}
             >
-                PROMO
+                <p className='nav-opt'>PROMO</p>
             </Link>
 
             <input className='searchBox' placeholder='Search your DRIP'>
@@ -48,7 +48,7 @@ function MyNavbar() {
                 className={`navItem ${activeTab === '/cart' ? 'active' : ''}`}
                 onClick={() => handleTabClick('/cart')}
             >
-                CART(0)
+                <p className='nav-opt'>CART(0)</p>
             </Link>
 
         </div>
