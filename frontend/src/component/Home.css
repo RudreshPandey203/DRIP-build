@@ -1,3 +1,7 @@
+:root{
+    --border-type:solid grey 1px;
+    --text-color:grey;
+}
 .home{
     height: 89vh;
     overflow-x: scroll !important;
@@ -10,7 +14,8 @@
     display: block;
 }
 .product{
-    height: 80vh;
+    height: 45vw;
+    min-height: 35rem;
 }
 .new-product{
     position: absolute;
@@ -18,7 +23,7 @@
     top:10vh;
 }
 .description{
-    color:grey;
+    color:var(--text-color);
     padding-top:20vh;
     padding-left: 5vw;
     width: 8vw;
@@ -27,12 +32,13 @@
 .button-new{
     width: 30px;
     height: 4vh;
-    border: 1px grey solid !important;
+    border:var(--border-type) !important;
     float:right;
     position: relative;
     border-radius: 0 !important;
     top:-8vh;
     right: 5vw;
+    z-index: 1;
 }
 .button-new:focus{
     outline: none;
@@ -41,15 +47,24 @@
     transition: all;
     background-color: rgb(45, 44, 44) !important;
 }
+.table{
+    width: 710px;
+    padding-top:10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .column-new{
     display: flex;
     list-style: none;
-    position: relative;
-    top:10vh;
-    left: 5vw;
     font:2rem;
     text-align: center;
     width: fit-content;
+    border:var(--border-type);
+}
+.column-new>li{
+    border-right: var(--border-type);
+    color:var(--text-color);
 }
 li>p{
     padding:0.5rem 1rem;
@@ -57,6 +72,7 @@ li>p{
 
 .row-1{
     font-size: 1.4rem;
+    border-bottom: var(--border-type);
 }
 .row-2{
     font-size: 1.6rem;
@@ -64,28 +80,24 @@ li>p{
 }
 .details{
     font-size: 1.5rem;
-    word-wrap: normal;
+    text-wrap: wrap;
+    max-width: 300px;
+    max-height: fit-content;
+    align-items: center;
+    justify-content: center;
+    border:none !important;
 }
-/*
-      <ul className='column-new'>
-          <li className='size'>
-            <p className='row-1'>
-            Size
-            </p>
-            <p className='row-2'>
-            {products[currentIndex].size}
-            </p>
-          </li>
-          <li className='Colors'>
-            <p className='row-1'>
-            Colors
-            </p>
-            <p className='row-2'>
-            {products[currentIndex].colors}
-            </p>
-          </li>
-          <li className='details'>
-            <p className='detail-des'>{products[currentIndex].details}</p>
-          </li>
-        </ul>
-*/
+.detail-des{
+}
+
+  @media (max-width: 710px) {
+    .column-new li ,
+    .row-1 ,
+    .row-2{
+        font-size: 3.5vw !important;
+    }
+    .table{
+        width: 100vw !important;
+    }
+
+  }  

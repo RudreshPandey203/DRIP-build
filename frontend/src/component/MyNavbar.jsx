@@ -1,14 +1,18 @@
 import './Navbar.css'
 import Logo from '../assets/dripLogo.png'
-import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import { Link, useLocation} from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import SearchIcon from '@mui/icons-material/Search';
 function MyNavbar() {
-    const [activeTab, setActiveTab] = useState('/home');
+    const location = useLocation();
+    const [activeTab, setActiveTab] = useState(location.pathname);
 
     const handleTabClick = (tab) => {
         setActiveTab(tab);
     };
+    useEffect(()=>{
+        setActiveTab(location.pathname);
+    },[location.pathname])
     return (
         <div fill variant="tabs" className='brand-nav ' defaultActiveKey="/">
             <img className="brand-image" src={Logo} alt="Logo" />

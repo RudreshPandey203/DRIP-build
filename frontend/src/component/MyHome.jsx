@@ -43,8 +43,9 @@ function MyHome() {
         <img className="product" src={products[currentIndex].image} alt="shirt1" />
         <br />
         <Button className='button-new left' onClick={handleNextClick} ><ArrowForwardIcon sx={{ fontSize: 20, color: 'grey' }} /></Button>
-        <Button className='button-new right' onClick={handlePrevClick} ><ArrowBackIcon sx={{ fontSize: 20, color: 'grey' }} /></Button>
+        <Button className='button-new right' onClick={handlePrevClick} ><ArrowBackIcon sx={{ fontSize: 20, color:'grey' }} /></Button>
       </div>
+      <div className='table'>
       <ul className='column-new'>
         <li className='size'>
           <p className='row-1'>
@@ -66,6 +67,7 @@ function MyHome() {
           <p className='detail-des'>{products[currentIndex].details}</p>
         </li>
       </ul>
+      </div>
     </div>
 
   )

@@ -6,7 +6,8 @@
     display:flex;
     justify-content: center;
     padding-top:4vh !important;
-    text-align: center;height: 7vh;
+    text-align: center;
+    height: 7vh;
 }
 
 .searchBox{
@@ -38,6 +39,7 @@
     align-items: center;
     border-top: var(--border-nav);
     border-bottom: var(--border-nav);
+    font-size:1rem;
 }
 .active{
     font-weight: bold;
@@ -56,4 +58,9 @@ input{
 }
 .navItem:hover{
     color:white;
+}
+@media (max-width: 710px) {
+    .navItem{
+        font-size: 2vw !important;
+    }
 }
