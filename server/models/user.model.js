@@ -1,4 +1,6 @@
 import mongoose from "mongoose";
+import passportLocalMongoose from "passport-local-mongoose";
+import bcrypt from "bcrypt";
 
 const userSchema = new mongoose.Schema(
   {
@@ -17,9 +19,6 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    avatar: {
-      type: String,
-    },
     location: {
       type: String,
       default: "",
@@ -33,7 +32,7 @@ const userSchema = new mongoose.Schema(
     /*   cartItems: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Post",
+        ref: "product",
         default: [],
       },
     ], */
@@ -48,4 +47,18 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model("users", userSchema);
+userSchema.pre("save", async function () {
+  if (!this.isModified("password")) {
+    return;
+  }
+  const salt = bcrypt.genSaltSync(16);
+  this.password = await bcrypt.hash(this.password, salt);
+});
+userSchema.methods.comparePassword = async function (userPassword) {
+  const isMatch = await bcrypt.compare(userPassword, this.password);
+  return isMatch;
+};
+
+userSchema.plugin(passportLocalMongoose);
+
+export default mongoose.model("user", userSchema);
