@@ -48,7 +48,7 @@
     background-color: rgb(45, 44, 44) !important;
 }
 .table{
-    width: 710px;
+    width: 800px;
     padding-top:10vh;
     display: flex;
     justify-content: center;
@@ -87,10 +87,8 @@ li>p{
     justify-content: center;
     border:none !important;
 }
-.detail-des{
-}
 
-  @media (max-width: 710px) {
+@media (max-width: 710px) {
     .column-new li ,
     .row-1 ,
     .row-2{
@@ -99,5 +97,4 @@ li>p{
     .table{
         width: 100vw !important;
     }
-
-  }  
+}  

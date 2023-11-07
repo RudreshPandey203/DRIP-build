@@ -1,0 +1,58 @@
+:root{
+    --border-nav:1px solid grey;
+    --text-color:grey;
+}.shop{
+    height: 89vh;
+    padding-top:5vh;
+    display: flex;
+    justify-content: center;
+    padding-top:10vh;
+}
+.shop-cards{
+    width: 80vw;
+    height: 70vh;
+}
+.cloth-rack{
+    display: flex;
+    justify-content: space-between;
+    width:50vw;
+    float:right;
+}
+.shop-nav{
+    width: 7vw;
+    font-size: 0.8rem;
+    border-radius: 0 !important;
+    border:var(--border-nav);
+    color:var(--text-color);
+
+}
+.shop-nav:hover{
+    transition: all;
+    background-color: rgb(45, 44, 44) !important;
+    border: var(--border-nav);
+}
+.shop-nav:focus{
+    outline: none;
+    background-color: white;
+    color: black;
+    border: none;
+}
+.shop-nav:focus:hover{
+    background-color: white !important;
+}
+
+.back-img{
+    height: 60vh;
+    padding: 5vh 2vw;
+    z-index: 3;
+    display: inline-block;
+}
+.cards{
+    overflow-x: scroll;
+    width: 80vw;
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
+}
+.cards>img{
+    scroll-snap-align: start center;
+}
