@@ -1,7 +1,6 @@
 import { UnAuthenticatedError } from "../errors/index.js";
 
-const authentication =async (req, res, next) => {
-  console.log(req.isAuthenticated());
+const authentication = async (req, res, next) => {
   if (req.isAuthenticated()) {
     return next();
   }

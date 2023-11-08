@@ -1,9 +1,8 @@
 import cloudinary from "cloudinary";
 import { StatusCodes } from "http-status-codes";
 import { BadRequestError } from "../../errors/index.js";
-import * as fs from "fs"
+import * as fs from "fs";
 const uploadPicture = async (req, res, next) => {
-  console.log(req.files);
   if (
     !req.files ||
     !req.headers["content-type"].startsWith("multipart/form-data")
@@ -12,7 +11,7 @@ const uploadPicture = async (req, res, next) => {
   }
 
   const productImage = req.files?.image;
-  if (!productImage && !productImage?.mimetype?.startsWith("image")) {
+  if (productImage && !productImage?.mimetype?.startsWith("image")) {
     throw new BadRequestError("Please upload a  image");
   }
   if (productImage) {

@@ -9,7 +9,7 @@ passport.use(
     { usernameField: "email", passwordField: "password" },
     async (email, password, done) => {
       try {
-        const user = await User.findOne({ email: email });
+        const user = await User.findOne({ email: email }).select('+password');
         if (!user) {
           throw new BadRequestError("Invalid email Id");
         }
@@ -30,14 +30,12 @@ passport.use(
 
 passport.serializeUser((user, done) => {
   // Serialization logic
-  console.log(user.id);
   done(null, user.id);
 });
 
 passport.deserializeUser(async(id, done) => {
     try {
         const user = await User.findById(id);
-        console.log(user);
         done(null, user);
       } catch (err) {
         done(err);

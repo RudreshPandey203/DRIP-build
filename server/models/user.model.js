@@ -18,6 +18,7 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
+      select:false
     },
     location: {
       type: String,
@@ -61,4 +62,4 @@ userSchema.methods.comparePassword = async function (userPassword) {
 
 userSchema.plugin(passportLocalMongoose);
 
-export default mongoose.model("user", userSchema);
+export default mongoose.model("users", userSchema);
