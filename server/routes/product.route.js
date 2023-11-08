@@ -3,6 +3,10 @@ import authentication from "../middlewares/authentication.js";
 import uploadPicture from "../middlewares/products/fileUpload.js";
 import authorization from "../middlewares/authorization.js";
 import {
+  productValidator,
+  validatorHandler,
+} from "../middlewares/products/productValidation.js";
+import {
   createProduct,
   deleteProduct,
   editProduct,
@@ -14,7 +18,13 @@ const router = express.Router();
 router
   .route("/")
   .get(getAllProducts)
-  .post(authentication, authorization, createProduct);
+  .post(
+    authentication,
+    authorization,
+    productValidator,
+    validatorHandler,
+    createProduct
+  );
 
 router.route("/img-upload").post(authentication, authorization, uploadPicture);
 router

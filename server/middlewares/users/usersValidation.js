@@ -1,9 +1,9 @@
-import { check, validationResult } from "express-validator";
+import { body, validationResult } from "express-validator";
 import User from "../../models/user.model.js";
 import BadRequestError from "../../errors/badRequestError.js";
 
 const registerValidator = [
-  check("name")
+  body("name")
     .isLength({ min: 1 })
     .withMessage("Name is required")
     .isAlpha("en-US", { ignore: " -" })
@@ -21,7 +21,7 @@ const registerValidator = [
       }
     })
     .trim(),
-  check("email")
+  body("email")
     .isEmail()
     .withMessage("Invalid email address")
     .trim()
@@ -33,10 +33,10 @@ const registerValidator = [
         );
       }
     }),
-  check("password")
+  body("password")
     .isLength({ min: 6 })
     .withMessage("Please enter a password with 6 or more characters"),
-  check("role").default("general"),
+  body("role").default("general"),
 ];
 
 const validatorHandler = (req, res, next) => {
