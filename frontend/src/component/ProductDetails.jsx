@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './ProductDetails.css';
 import productImage from '../assets/Shirts/LITERACY (1).png'
+import { Button } from 'react-bootstrap';
 function ProductDetails() {
     return (
         <div className='pruductDetails'>
@@ -54,6 +55,22 @@ function ProductDetails() {
                         <p className='price'>
                             $899
                         </p>
+                        <div className='buy-option'>
+                            <div className='count'>
+                                <div className='sub counte'>
+                                    -
+                                </div>
+                                <div className='iteration counte'>
+                                    1
+                                </div>
+                                <div className='add counte'>
+                                    +
+                                </div>
+                            </div>
+                            <div className='buy-button'>
+                                Buy Now
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

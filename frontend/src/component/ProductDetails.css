@@ -80,3 +80,28 @@
     font-size: 3rem;
     font-weight: 600;
 }
+.buy-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    border:1px grey solid ;
+    width: 8vw;
+
+}
+.counte{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    width: 3vw;
+    border:1px grey solid ;
+}
+.count{
+    display: flex;
+    margin-right:5vw;
+}
+.buy-option{
+    display:flex;
+    margin-top: 5vh;
+}
