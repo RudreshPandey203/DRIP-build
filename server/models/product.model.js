@@ -48,4 +48,9 @@ const productSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+productSchema.pre("deleteOne", async function () {
+  const id = this.getQuery()["_id"];
+  await mongoose.model("review").deleteMany({ productId: id });
+});
+
 export default mongoose.model("product", productSchema);
