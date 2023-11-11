@@ -13,6 +13,10 @@ import {
   getAllProducts,
   getSingleProduct,
 } from "../controllers/product.controller.js";
+import {
+  productIdParamValidator,
+  productIdParamvalidatorHandler,
+} from "../middlewares/products/productIdValidation.js";
 const router = express.Router();
 
 router
@@ -27,10 +31,27 @@ router
   );
 
 router.route("/img-upload").post(authentication, authorization, uploadPicture);
+
 router
   .route("/:productId")
-  .get(getSingleProduct)
-  .patch(authentication, authorization, editProduct)
-  .delete(authentication, authorization, deleteProduct);
+  .get(
+    productIdParamValidator,
+    productIdParamvalidatorHandler,
+    getSingleProduct
+  )
+  .patch(
+    authentication,
+    authorization,
+    productIdParamValidator,
+    productIdParamvalidatorHandler,
+    editProduct
+  )
+  .delete(
+    authentication,
+    authorization,
+    productIdParamValidator,
+    productIdParamvalidatorHandler,
+    deleteProduct
+  );
 
 export default router;

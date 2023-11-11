@@ -12,6 +12,15 @@ import {
   reviewValidator,
   validatorHandler,
 } from "../middlewares/reviews/reviewValidation.js";
+import {
+  reviewIdParamValidator,
+  reviewIdParamvalidatorHandler,
+} from "../middlewares/reviews/reviewIdValidation.js";
+
+import {
+  productIdParamValidator,
+  productIdParamvalidatorHandler,
+} from "../middlewares/products/productIdValidation.js";
 
 const router = express.Router();
 
@@ -19,11 +28,19 @@ router
   .route("/")
   .get(getAllReviews)
   .post(authentication, reviewValidator, validatorHandler, createReview);
-router.route("/product/:productId").get(getSingleProductReviews);
+router
+  .route("/product/:productId")
+  .get(
+    productIdParamValidator,
+    productIdParamvalidatorHandler,
+    getSingleProductReviews
+  );
+
+router.use(authentication);
 router
   .route("/:reviewId")
-  .get(authentication, getSingleReview)
-  .delete(authentication, deleteReview)
-  .patch(authentication, updateReview);
+  .get(reviewIdParamValidator, reviewIdParamvalidatorHandler, getSingleReview)
+  .delete(reviewIdParamValidator, reviewIdParamvalidatorHandler, deleteReview)
+  .patch(reviewIdParamValidator, reviewIdParamvalidatorHandler, updateReview);
 
 export default router;
