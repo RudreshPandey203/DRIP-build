@@ -2,17 +2,15 @@
     --border-nav:1px grey solid;
     --main-background-color:rgb(26,25,25)
 }
-*{
-}
-.brand-left{
+.brand-nav{
     display:flex;
     justify-content: center;
-    padding-top:35px !important;
-    text-align: center;height: 11vh;
-}
-.navbar{
-    justify-content: center;
+    padding-top:4vh !important;
     text-align: center;
+    height: 7vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .searchBox{
@@ -21,24 +19,36 @@
     border-top: var(--border-nav);
     border-bottom: var(--border-nav);
     width: 24%;
-    height: 50px;
+    height: 3rem;
     background-color: var(--main-background-color)
 }
+.searchBox:focus{
+    outline: none;
+}
+.searchBox:focus::placeholder{
+    font-size:1rem;
+}
 .searchIcon{
-    padding:6px;
     border: var(--border-nav);
     border-left: none;
-    height: 38px;
+    padding:0.4rem;
+    height: 2.2rem;
+}
+.nav-opt{
+    padding:0.7rem;
 }
 .navItem{
     width:11%;
     color:rgb(184, 183, 183);
-    padding-top:12px;
-    height: 38px;
+    margin: auto none;
+    /* padding-top:12px; */
+    height: 3rem;
     border-right: var(--border-nav);
     text-decoration: none;
+    align-items: center;
     border-top: var(--border-nav);
     border-bottom: var(--border-nav);
+    font-size:1rem;
 }
 .active{
     font-weight: bold;
@@ -51,10 +61,15 @@ input{
 }
 .brand-image{
     object-fit: cover;
-    height: 50px;
+    height: 3rem;
     width: 6rem ;
     border: var(--border-nav);
 }
 .navItem:hover{
     color:white;
+}
+@media (max-width: 710px) {
+    .navItem{
+        font-size: 2vw !important;
+    }
 }

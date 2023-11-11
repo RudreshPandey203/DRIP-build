@@ -1,0 +1,107 @@
+.pruductDetails{
+    height: 89vh;
+    display: flex;
+    justify-content: center;
+}
+.product-window{
+    height: 70vh;
+    margin:7vh;
+    width: 80vw;
+}
+.shirt-path{
+    color:grey;
+    font-size: 0.9rem;
+}
+.product-description{
+    display:flex;
+}
+.product-number{
+    font-size: 8vh;
+    font-weight: 900;
+}
+.product-name{
+    font-size: 2.5vh;
+    padding:1.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.product-name1{
+    font-weight: 500;
+}
+.product-name2{
+    font-weight: 800;
+}
+.product-board{
+    display:flex;
+}
+.product-image{
+    background-image: url('../assets/backgrounds/background1.png');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    width: 40vw;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.product-img{
+    height: 75vh;
+    overflow: hidden;
+}
+.modification-window{
+    padding:2%;
+    width: 40vw;
+}
+.product-dets{
+    height: 15vh;
+}
+.product-mod{
+    color:grey;
+    padding-bottom: 2vh;
+
+}
+.bar{
+    display: flex;
+    margin-bottom: 2vh;
+
+}
+.mod-box{
+    height: 4vh;
+    width: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px grey solid ;
+    cursor: pointer;
+    margin-right: 1vw;
+}
+.price{
+    font-size: 3rem;
+    font-weight: 600;
+}
+.buy-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    border:1px grey solid ;
+    width: 8vw;
+
+}
+.counte{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    width: 3vw;
+    border:1px grey solid ;
+}
+.count{
+    display: flex;
+    margin-right:5vw;
+}
+.buy-option{
+    display:flex;
+    margin-top: 5vh;
+}

@@ -1,0 +1,114 @@
+:root{
+    --border-nav:1px solid grey;
+    --text-color:grey;
+}.shop{
+    height: 89vh;
+    display: flex;
+    justify-content: center;
+}
+.shop-cards{
+    width: 80vw;
+    height: 70vh;
+    margin-top:7vh;
+}
+.cloth-rack{
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
+    float:right;
+}
+.shop-nav{
+    width: 7vw;
+    font-size: 0.8rem;
+    border-radius: 0 !important;
+    border:var(--border-nav);
+    color:var(--text-color);
+
+}
+.shop-nav:hover{
+    transition: all;
+    background-color: rgb(45, 44, 44) !important;
+    border: var(--border-nav);
+}
+.shop-nav:focus{
+    outline: none;
+    
+}
+.active-shop{
+    background-color: white;
+    color: black;
+    border: none;
+}
+.shop-nav:focus:hover{
+    background-color: white !important;
+}
+
+.shirt-img{
+    display: inline-block;
+    width:35vw;
+    height: 60vh;
+    border: none !important;
+}
+.card-list{
+    height: 60vh;
+    margin:auto 5vw;
+    width: 25vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+
+}
+.cards{
+    display: flex;
+    margin-top: 8vh;
+    overflow-x: scroll;
+    width: 80vw;
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
+}
+.cards>img{
+    scroll-snap-align: start center;
+}
+.cloth-label{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    width: 12vw;
+    height: 8vh;
+    z-index: 3;
+    position: relative;
+    padding: 4px;
+}
+.card-pos{
+    position: relative;
+    bottom:60vh;
+}
+.corner-text {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    position: absolute;
+    padding: 12px;
+    color: white;
+    font-size: 2vw;
+  }
+  
+  .top-left {
+    top: 0;
+    left: 0;
+  }
+  
+  .top-right {
+    top: 0;
+    right: 0;
+  }
+  
+  .bottom-left {
+    bottom: 0;
+    left: 0;
+  }
+  
+  .bottom-right {
+    bottom: 0;
+    right: 0;
+  }
