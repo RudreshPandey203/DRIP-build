@@ -1,6 +1,11 @@
 import mongoose from "mongoose";
 
 const sizePriceSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+    enum: ["REGULAR", "OVERSIZED"],
+  },
   size: {
     type: String,
     required: true,
@@ -16,7 +21,7 @@ const imageUrlSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    enum: ["FRONT", "BACK", "RIGHT", "LEFT"],
+    enum: ["FRONT", "BACK", "FRONTWITHPERSON", "BACKWITHPERSON"],
   },
   url: {
     type: String,

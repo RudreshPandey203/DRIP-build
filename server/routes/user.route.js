@@ -9,7 +9,11 @@ import passport from "../config/passport.js";
 
 const router = express.Router();
 
-router.route("/register").post(registerValidator, validatorHandler, register);
-router.route("/login").post(passport.authenticate("local"), login);
+router
+  .route("/register")
+  .post(registerValidator, validatorHandler, register, sendVerificationEmail);
+router
+  .route("/login")
+  .post(passport.authenticate("local"),  login);
 
 export default router;
