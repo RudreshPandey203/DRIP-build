@@ -5,7 +5,7 @@ import image2 from '../assets/Shirts/coupon2.png'
 
 function Promo() {
   return (
-    <div className='promo'>
+    <div className='promo text-white'>
         <div className='promo-content'>
           <div className='promo-images'>
             <img className='img2' src={image2}/>
