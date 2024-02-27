@@ -1,57 +1,70 @@
-:root{
-    --border-nav:1px solid grey;
-    --text-color:grey;
-}.shop{
+:root {
+    --border-nav: 1px solid grey;
+    --text-color: grey;
+    --main-background-color: #2C2E31;
+
+}
+
+.shop {
     height: 89vh;
     display: flex;
     justify-content: center;
 }
-.shop-cards{
+
+.shop-cards {
     width: 80vw;
     height: 70vh;
-    margin-top:7vh;
+    margin-top: 7vh;
 }
-.cloth-rack{
+
+.cloth-rack {
     width: 80vw;
     display: flex;
     justify-content: space-between;
-    float:right;
+    float: right;
 }
-.shop-nav{
+
+.shop-nav {
     width: 7vw;
     font-size: 0.8rem;
     border-radius: 0 !important;
-    border:var(--border-nav);
-    color:var(--text-color);
+    border: var(--border-nav);
+    color: var(--text-color);
+    background-color: var(--main-background-color);
 
 }
-.shop-nav:hover{
+
+.shop-nav:hover {
     transition: all;
     background-color: rgb(45, 44, 44) !important;
     border: var(--border-nav);
 }
-.shop-nav:focus{
+
+.shop-nav:focus {
     outline: none;
-    
+
 }
-.active-shop{
+
+.active-shop {
     background-color: white;
     color: black;
     border: none;
 }
-.shop-nav:focus:hover{
+
+.shop-nav:focus:hover {
     background-color: white !important;
 }
 
-.shirt-img{
+.shirt-img {
     display: inline-block;
-    width:35vw;
+    width: 35vw;
     height: 60vh;
     border: none !important;
 }
-.card-list{
+
+.card-list {
     height: 60vh;
-    margin:auto 5vw;
+    margin: auto 5vw;
     width: 25vw;
     display: flex;
     justify-content: center;
@@ -60,7 +73,8 @@
 
 
 }
-.cards{
+
+.cards {
     display: flex;
     margin-top: 8vh;
     overflow-x: scroll;
@@ -68,10 +82,12 @@
     scroll-snap-type: x mandatory;
     white-space: nowrap;
 }
-.cards>img{
+
+.cards>img {
     scroll-snap-align: start center;
 }
-.cloth-label{
+
+.cloth-label {
     font-family: 'Times New Roman', Times, serif;
     font-weight: bolder;
     width: 12vw;
@@ -80,10 +96,12 @@
     position: relative;
     padding: 4px;
 }
-.card-pos{
+
+.card-pos {
     position: relative;
-    bottom:60vh;
+    bottom: 60vh;
 }
+
 .corner-text {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bolder;
@@ -91,24 +109,24 @@
     padding: 12px;
     color: white;
     font-size: 2vw;
-  }
-  
-  .top-left {
+}
+
+.top-left {
     top: 0;
     left: 0;
-  }
-  
-  .top-right {
+}
+
+.top-right {
     top: 0;
     right: 0;
-  }
-  
-  .bottom-left {
+}
+
+.bottom-left {
     bottom: 0;
     left: 0;
-  }
-  
-  .bottom-right {
+}
+
+.bottom-right {
     bottom: 0;
     right: 0;
-  }
+}

@@ -1,6 +1,6 @@
 :root{
     --border-nav:1px grey solid;
-    --main-background-color:rgb(26,25,25)
+    --main-background-color:#2C2E31;
 }
 .brand-nav{
     display:flex;

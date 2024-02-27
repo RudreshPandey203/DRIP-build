@@ -1,3 +1,6 @@
+*{
+    transition: all;
+}
 .pruductDetails{
     height: 89vh;
     display: flex;
@@ -50,7 +53,7 @@
     overflow: hidden;
 }
 .modification-window{
-    padding:2%;
+    margin-left:2vw;
     width: 40vw;
 }
 .product-dets{
@@ -75,6 +78,7 @@
     border:1px grey solid ;
     cursor: pointer;
     margin-right: 1vw;
+    transition: all 0.2s;
 }
 .price{
     font-size: 3rem;
@@ -86,8 +90,10 @@
     align-items: center;
     height: 6vh;
     border:1px grey solid ;
-    width: 8vw;
-
+    width: 12vw;
+    font-size: 2vw;
+    font-weight: 700;
+    transition: 0.4s !important;
 }
 .counte{
     display: flex;
@@ -96,6 +102,10 @@
     height: 6vh;
     width: 3vw;
     border:1px grey solid ;
+    cursor: pointer;
+}
+.sub:hover, .add:hover{
+    background-color: rgb(79, 77, 77);
 }
 .count{
     display: flex;
@@ -104,4 +114,22 @@
 .buy-option{
     display:flex;
     margin-top: 5vh;
+}
+.size>.mod-box:hover{
+    background-color: white;
+    color:black;
+}
+.color>.mod-box:hover{
+    border:yellow 1px solid!important;
+}
+.buy-button:hover{
+    background-color: #758EC3;
+    cursor: pointer;
+}
+.activeSizebox{
+    background-color: white;
+    color:black ;
+}
+.activeColorbox{
+    border: 2px solid yellow;
 }
